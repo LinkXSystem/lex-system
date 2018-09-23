@@ -39,7 +39,6 @@ module.exports = {
           type: Sequelize.DATE,
           allowNull: false,
           defaultValue: Sequelize.NOW,
-          comment: '更新时间',
         },
       },
       {

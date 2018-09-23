@@ -36,5 +36,6 @@ module.exports = (sequelize, DateTypes) =>
     },
     {
       tableName: 'user',
+      timestamps: false,
     },
   );
