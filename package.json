@@ -1,0 +1,23 @@
+{
+  "name": "lex-system",
+  "version": "1.0.0",
+  "description": "简阅的小程序-服务端",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hapi"
+  ],
+  "author": "zhi",
+  "license": "ISC",
+  "dependencies": {
+    "env2": "^2.2.2",
+    "hapi": "16",
+    "inert": "^5.1.0",
+    "joi": "^13.6.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.1",
+    "vision": "^5.4.0"
+  }
+}
