@@ -4,7 +4,11 @@ const Hapi = require('hapi');
 
 const application = new Hapi.Server();
 
+// 配置
 const config = require('./config');
+// 插件
+const swagger = require('./plugins/swagger');
+// 路由
 const article = require('./routes/article');
 
 application.connection({
@@ -13,6 +17,8 @@ application.connection({
 });
 
 const init = async () => {
+  await application.register([...swagger]);
+
   application.route([...article]);
 
   await application.start();
