@@ -3,17 +3,19 @@ const faker = require('faker');
 
 const models = require('../../../models');
 
-describe('User Model', () => {
-  let user;
+describe('Article Model', () => {
+  let article;
 
   before(async () => {
-    user = await models.user.create({
+    article = await models.article.create({
       uuid: faker.random.uuid(),
-      open_uuid: faker.random.uuid(),
-      name: faker.internet.userName(),
-      avatar: faker.internet.avatar(),
-      incline: 'reader',
-      inspect: false,
+      user_uuid: faker.random.uuid(),
+      title: faker.lorem.word(),
+      description: faker.lorem.sentence(),
+      content: faker.lorem.paragraph(),
+      image: faker.image.image(),
+      page: faker.random.number(),
+      time: faker.random.number(),
       created_time: new Date().getTime(),
       updated_time: new Date().getTime(),
     });
@@ -31,12 +33,12 @@ describe('User Model', () => {
     // runs after each test in this block
   });
 
-  it('should generate a user model', async () => {
-    assert.isOk(user.uuid);
+  it('should generate a article model', async () => {
+    assert.isOk(article.uuid);
   });
 
   it('count to the table of user', async () => {
-    const count = await models.user.count();
+    const count = await models.article.count();
 
     assert.equal(count, 0);
   });
