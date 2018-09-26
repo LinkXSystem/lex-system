@@ -5,7 +5,6 @@ const Hapi = require('hapi');
 const application = new Hapi.Server();
 
 const config = require('./config');
-
 const article = require('./routes/article');
 
 application.connection({

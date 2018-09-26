@@ -4,7 +4,8 @@
   "description": "简阅的小程序-服务端",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "dev": "supervisor app.js"
   },
   "keywords": [
     "hapi"
@@ -26,6 +27,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "faker": "^4.1.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "supervisor": "^0.12.0"
   }
 }
