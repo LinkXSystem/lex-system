@@ -1,10 +1,10 @@
 {
-    "env": {
-        "node": true,
-        "mocha": true
-    },
-    "extends": "airbnb-base",
-    "rules": {
-        "linebreak-style": ["error", "windows"]
-    }
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "linebreak-style": ["error", "windows"]
+  }
 }
