@@ -2,6 +2,7 @@ const { assert } = require('chai');
 const faker = require('faker');
 
 const models = require('../../../models');
+const services = require('../../../services');
 
 describe('Article Model', () => {
   let article;
@@ -37,52 +38,17 @@ describe('Article Model', () => {
     await models.sequelize.close();
   });
 
-  beforeEach(() => {
-    // runs before each test in this block
-  });
-
-  afterEach(() => {
-    // runs after each test in this block
-  });
-
   it('should generate a article model', async () => {
     assert.isOk(article.uuid);
   });
 
-  // it('count to the table of user', async () => {
-  //   const count = await models.article.count();
+  it('should get article model by the uuid of article', async () => {
+    const articles = await services.article.findArticleByUuid(article.uuid);
 
-  //   assert.equal(count, 1);
-  // });
+    console.log('====================================');
+    console.log(articles);
+    console.log('====================================');
 
-  // it('get the list of articles model', async () => {
-  //   // eslint-disable-next-line
-  //   const { rows: result, count: total } = await models.article.findAndCountAll({
-  //     where: {
-  //       user_uuid: user.uuid,
-  //     },
-  //   });
-
-  //   assert.equal(total, 1);
-  // });
-
-  // it('concat of user & article by the uuid of user', async () => {
-  //   // eslint-disable-next-line
-  //   models.article.belongsTo(models.user, {
-  //     foreignKey: 'user_uuid',
-  //   });
-  //   // eslint-disable-next-line
-  //   const { rows: result, count: total } = await models.article.findAndCountAll({
-  //     include: [
-  //       {
-  //         model: models.user,
-  //         where: {
-  //           uuid: user.uuid,
-  //         },
-  //       },
-  //     ],
-  //   });
-
-  //   assert.equal(total, 1);
-  // });
+    assert.equal(1, 1);
+  });
 });

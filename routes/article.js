@@ -1,18 +1,14 @@
 const GROUP_NAME = 'article';
 
-const models = require('../models');
+const services = require('../services');
 
 module.exports = [
   {
     method: 'GET',
     path: '/',
     handler: async (request, reply) => {
-      const { rows: results, count: total } = await models.article.findAndCountAll({
-        attributes: {
-          exclude: ['user_uuid'],
-        },
-        limit: 5,
-      });
+      const { rows: results, count: total } = await services.article.findAndCountAll();
+
       reply({
         total,
         results,

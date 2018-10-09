@@ -10,6 +10,7 @@ const config = require('./config');
 const swagger = require('./plugins/swagger');
 // 路由
 const article = require('./routes/article');
+const user = require('./routes/user');
 
 application.connection({
   host: config.host,
@@ -19,7 +20,7 @@ application.connection({
 const init = async () => {
   await application.register([...swagger]);
 
-  application.route([...article]);
+  application.route([...article, ...user]);
 
   await application.start();
 };
