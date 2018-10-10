@@ -13,7 +13,7 @@ const article = require('./routes/article');
 const user = require('./routes/user');
 
 application.connection({
-  host: config.host,
+  // host: config.host,
   port: config.port,
 });
 
