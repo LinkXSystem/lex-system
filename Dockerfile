@@ -6,6 +6,8 @@ RUN git clone https://github.com/LinkXSystem/lex-system.git
 
 WORKDIR lex-system
 
+RUN git checkout -b deploy origin/deploy
+
 RUN yarn install
 
 EXPOSE 4500
