@@ -10,5 +10,5 @@ RUN yarn install
 
 EXPOSE 4500
 
-CMD ["pm2", "start", "app.js"]
+CMD ["pm2", "start", "ecosystem.config.js"]
 
